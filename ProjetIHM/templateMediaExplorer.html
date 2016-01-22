@@ -1,0 +1,142 @@
+<md-dialog flex>
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<h2>Choix d'un média</h2>
+			<span flex></span>
+			<md-button class="md-icon-button" ng-click="hide()">
+				<md-icon md-svg-src="images/cross.svg" aria-label="Close dialog"></md-icon>
+			</md-button>
+		</div>
+	</md-toolbar>
+	<md-dialog-content>
+		<md-tabs md-dynamic-height >
+			<md-tab ng-click="mc.initTab(server)" ng-repeat="server in mc.bricks | toArray:false | filter: {type:'BrickUPnP_MediaServer'}">
+				<md-tab-label layout="row">
+					<span><img ng-src="{{server.iconURL}}" /> {{server.name}}</span>
+				</md-tab-label>
+				<md-tab-body>
+					<div id="breadcrumb">
+						<ul layout="row" layout-wrap>
+							<li ng-repeat="ad in server.breadCrumb">
+								<span class="debut"></span><a href ng-click="mc.BreadCrumbing(ad.id, $index, ad.brick)">{{ad.title}}
+								</a><span class="fin"></span>
+							</li>
+						</ul>
+					</div>
+
+					<md-content>
+						<md-grid-list layout-align="center center" md-cols-xs="2" md-cols-sm="3" md-cols-gt-sm="5"
+									  md-row-height-gt-xs="1:1" md-row-height-xs="150px" >
+							<md-grid-tile ng-repeat="cart in server.containers" ng-click="mc.Browse(cart.brick, cart.id)">
+								<section layout="column">
+									<md-icon layout-align="center center" md-svg-src="images/directory.svg"></md-icon>
+									<h3>{{cart.title}}</h3>
+								</section>
+							</md-grid-tile>
+
+						</md-grid-list>
+
+						<md-grid-list layout-align="center center" md-cols-xs="2" md-cols-sm="3" md-cols-gt-sm="5"
+									  md-row-height-gt-xs="1:1" md-row-height-xs="150px"  md-gutter="10px"  >
+							<md-grid-tile ng-repeat="cart in server.items" ng-click="infosMedia(cart, server.id)">
+								<section layout="column">
+									<md-icon md-svg-src="images/movie.svg"></md-icon>
+									<h3>{{cart.title}}</h3>
+								</section>
+							</md-grid-tile>
+						</md-grid-list>
+					</md-content>
+				</md-tab-body>
+			</md-tab>
+		</md-tabs>
+	</md-dialog-content>
+</md-dialog>
+
+<!--<md-dialog>
+	<form>
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+				<h2>Choix d'un média</h2>
+				<span flex></span>
+				<md-button class="md-icon-button" ng-click="hide()">
+					<md-icon md-svg-src="images/cross.svg" aria-label="Close dialog"></md-icon>
+				</md-button>
+			</div>
+		</md-toolbar>
+		<md-dialog-content style="max-width:800px;max-height:810px;">
+			<md-tabs md-dynamic-height >
+				<md-tab label="{{server.name}}" ng-repeat="server in mc.bricks | toArray:false | filter: {type:'BrickUPnP_MediaServer'}">
+					<div id="breadcrumb">
+						<ul>
+							<li ng-repeat="ad in server.breadCrumb">
+								<a href ng-click="mc.BreadCrumbing(ad.id, $index, ad.brick)">{{ad.title}}</a>
+								<span class="end">&nbsp;</span>
+							</li>
+						</ul>
+					</div>
+
+					<img ng-src="{{server.iconURL}}" ng-click="mc.Browse(server, 0)" />
+
+					<md-content class="directories">
+						<md-grid-list  md-cols-xs="1" md-cols-sm="1" md-cols-md="3" md-cols-lg="4" md-cols-xl="5" md-row-height="1:1" md-gutter="5px"  >
+
+							<md-grid-tile class="gray directory"  ng-repeat="cart in server.containers" ng-click="mc.Browse(cart.brick, cart.id)">
+								{{cart.title}}
+							</md-grid-tile>
+
+						</md-grid-list>
+
+						<div class="niveau1" layout="row" layout-padding layout-wrap layout-fill style="padding-bottom: 32px;" ng-cloak>
+							<md-whiteframe class="md-whiteframe-1dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout layout-align="center center"
+							ng-repeat="cart in server.items" >
+								<md-card class="card" ng-click="open({id:cart.id, idBrick:server.id})">
+									<md-grid-tile-header>
+									<h3>{{cart.title}}</h3>
+									</md-grid-tile-header>
+									<img ng-src="{{cart.affiche}}" class="md-card-image" alt="Pas d'affiche disponible">
+									<div>
+										<div class="niveau2">
+										{{cart.description}}
+										</div>
+									</div>
+								</md-card >
+							</md-whiteframe>
+						</div>
+					</md-content>
+				</md-tab>
+			</md-tabs>
+		</md-dialog-content>
+	</form>
+</md-dialog>-->
+
+
+
+<!--<md-dialog aria-label="Mango (Fruit)">
+	<md-tabs md-dynamic-height="" md-border-bottom="">
+		<md-tab label="bidule" flex >
+			<md-tab-label >
+				<md-tab-label-content style="-ms-word-wrap: break-word !important;word-wrap: break-word !important;">
+					one one one one one one one one one
+				</md-tab-label-content>
+			</md-tab-label>
+			<md-tab-body class="md-padding">
+				<h1 class="md-display-2">Tab One</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi.</p>
+			</md-tab-body>
+		</md-tab>
+		<md-tab label="two">
+			<md-content class="md-padding">
+				<h1 class="md-display-2">Tab Two</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante varius gravida. Curabitur a purus vel augue ultrices ultricies id a nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris semper.</p>
+				<p>Morbi viverra, ante vel aliquet tincidunt, leo dolor pharetra quam, at semper massa orci nec magna. Donec posuere nec sapien sed laoreet. Etiam cursus nunc in condimentum facilisis. Etiam in tempor tortor. Vivamus faucibus egestas enim, at convallis diam pulvinar vel. Cras ac orci eget nisi maximus cursus. Nunc urna libero, viverra sit amet nisl at, hendrerit tempor turpis. Maecenas facilisis convallis mi vel tempor. Nullam vitae nunc leo. Cras sed nisl consectetur, rhoncus sapien sit amet, tempus sapien.</p>
+				<p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+			</md-content>
+		</md-tab>
+		<md-tab label="three">
+			<md-content class="md-padding">
+				<h1 class="md-display-2">Tab Three</h1>
+				<p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+			</md-content>
+		</md-tab>
+	</md-tabs>
+</md-dialog>-->

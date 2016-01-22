@@ -1,0 +1,20 @@
+{
+  "name": "ProjetIHM",
+  "homepage": "https://github.com/AlexDmr/tacthab",
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#~1.4.7",
+    "angular-material": "~0.11.4",
+    "angular-toArrayFilter": "~1.0.1"
+  }
+}

@@ -1,0 +1,58 @@
+div.EventNodePresentation {
+	border			: solid black 1px;
+	border-radius	: 1em;
+	padding			: 0.4em;
+	background		: lightyellow;
+	display			: inline-flex;
+	vertical-align	: top;
+	flex-flow		: row nowrap;
+	box-shadow		: 0.2em 0.2em 0.2em 0.05em black inset
+}
+
+.EventNodePresentation > .event_symbol {
+	flex			: 0 0 32px;
+	width			: 32px;
+	height			: 32px;
+	vertical-align	: top;
+}
+
+div.EventNodePresentation > * {
+	display			: inline-block;
+}
+
+.EventNodePresentation > .event_description {
+	flex			: 1;
+}
+
+.EventNodePresentation  p {
+	margin			: 0px;
+	padding			: 0px;
+}
+
+.EventNodePresentation p.eventName {
+	border-bottom	: dashed black 1px;
+	background		: lightyellow;
+	white-space		: nowrap;
+}
+
+.EventNodePresentation p.selector {
+	background		: #B9B9FF;
+}
+
+@keyframes EventNodePresentation_droppable {
+	0%				 {background	: #B9B9FF;}
+	50%				   {transform		: scale(1.2);
+					   background	: lightgreen;
+					  }
+	100%			   {background: #B9B9FF;}
+}
+
+.EventNodePresentation p.selector.possible2drop {
+	animation		: EventNodePresentation_droppable 1s ease-in-out infinite;
+}
+
+.EventNodePresentation p.selector.possible2drop.ready2drop {
+	transform		: scale(1.2);
+	background		: lightgreen;
+	animation		: initial;
+}

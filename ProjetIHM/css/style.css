@@ -1,0 +1,175 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    list-style-type:none;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+*:focus {
+    outline: none;
+}
+
+body > h1 {
+    margin: 20px 0px 20px 40px;
+}
+
+md-card.player {
+    background-color: blue;
+}
+
+md-card.player md-toolbar input[type="checkbox"].focus {
+    width: 30px;
+    height: 30px;
+    margin-left: auto;
+    border: 1px black solid;
+}
+
+md-slider {
+    /*min-width: 50%;*/
+    min-width: 150px;
+}
+
+md-content.playerContent {
+    padding: 10px;
+}
+
+md-slider {
+    margin: 0 10px;
+}
+
+md-tabs-content-wrapper {
+    padding: 0 20px;
+}
+
+md-tab-item {
+    max-width: none !important;
+
+}
+
+md-tab-item img {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+md-grid-tile md-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+md-grid-tile:active md-icon path {
+    fill: white;
+}
+
+md-grid-tile h3 {
+    word-break: break-all;
+    padding: 0 10px;
+    text-align: center;
+}
+
+/*Marine et Rémi*/
+
+md-grid-tile{
+    margin-top:0;
+}
+
+
+.items {
+    background-color: #F8F8F8 ; /*#F8F8F8*/
+    padding: 5px;
+    box-shadow: 1px 1px 12px #555;
+}
+
+md-card > img, md-card > :not(md-card-content) img {
+    width: 150px;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+#breadcrumb {
+    margin-top: 10px;
+}
+
+#breadcrumb li {
+    margin-top: 5px;
+}
+
+#breadcrumb li > *{
+    vertical-align: middle;
+}
+
+/*Tous les éléments de la liste sauf premier et dernier*/
+#breadcrumb span.debut {
+    background:url(../images/general-left.png) 0 0 no-repeat;
+    width: 21px;
+    display: inline-block;
+    /*margin:5px 0 0 0;*/
+    /*padding-left:13px;*/
+}
+
+#breadcrumb li a {
+    background:url(../images/bg-gradient.jpg) 0 0 repeat-x;
+    line-height: 33px;
+    display: inline-block;
+    text-transform:uppercase;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+#breadcrumb li a:hover {
+    text-decoration: underline;
+}
+
+/*!*Style du dernier span de la liste*!*/
+#breadcrumb li span.fin {
+    background:url(../images/general-right.png) 0 0 no-repeat;
+    width: 20px;
+    display: inline-block;
+}
+
+#breadcrumb li span {
+    height: 33px;
+}
+
+md-grid-tile:active{
+    background-color:rgb(255,171,64);
+    color:white;
+}
+
+md-grid-list.ng-isolate-scope {
+    padding:5px;
+}
+
+md-dialog > md-toolbar button > md-icon > svg path {
+    fill: white;
+}
+
+md-dialog-content.details {
+    padding: 20px;
+    text-align: center;
+}
+
+md-dialog-content.details > * {
+    margin-bottom: 20px;
+}
+
+md-dialog-content.details > h3 {
+    font-size: 150%;
+}
+
+md-dialog-content.details > p {
+    max-width: 500px;
+    text-align: justify;
+    margin-bottom: 0;
+}
+
+md-dialog-content.details > img {
+    max-width: 100%;
+    height: auto;
+}

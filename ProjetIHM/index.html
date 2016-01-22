@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="projetIHM">
+	<head>
+		<meta charset="UTF-8">
+		<title>Projet IHM</title>
+		<link rel="stylesheet" href="./bower_components/angular-material/angular-material.css">
+		<script src="./bower_components/angular/angular.js"></script>
+		<script src="./bower_components/angular-animate/angular-animate.js"></script>
+		<script src="./bower_components/angular-aria/angular-aria.js"></script>
+		<script src="./bower_components/angular-material/angular-material.js"></script>
+		<script src="./bower_components/angular-toArrayFilter/toArrayFilter.js"></script>
+		<script src="./bundleUPnP.js"></script>
+		<link rel="stylesheet" href="css/style.css">
+
+		<meta name="viewport" content="initial-scale=1">
+	</head>
+	<body ng-controller="projetIHMController as Ctrl" ng-cloak>
+		<h1>Projet IHM</h1>
+		<!--<section>
+			<article ng-repeat="brick in Ctrl.bricks | toArray:false | filter:{type:'BrickUPnP_MediaServer'}">
+				<img ng-src="{{brick.iconURL}}" width="80" ng-click="Ctrl.Browse(brick)" />
+				<h2 ng-bind="brick.name"></h2>
+				<h3>(Type : {{brick.type}})</h3>
+			</article>
+		</section>-->
+		<section layout="row" layout-wrap>
+			<player flex-xs="auto" media-renderer-brick="brick" bricks="Ctrl.bricks" ng-repeat="brick in Ctrl.bricks | toArray:false | filter:{type:'BrickUPnP_MediaRenderer'}">
+			</player>
+		</section>
+	</body>
+</html>

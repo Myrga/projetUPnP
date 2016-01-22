@@ -1,0 +1,19 @@
+<md-dialog>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Détails du média</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="play()">
+                <md-icon md-svg-src="images/play.svg" aria-label="Play media"></md-icon>
+            </md-button>
+            <md-button class="md-icon-button" ng-click="retour()">
+                <md-icon md-svg-src="images/back-arrow.svg" aria-label="Close dialog"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content class="details">
+        <h3>{{mc.cart.title}}</h3>
+        <img ng-src="{{mc.cart.affiche}}"/>
+        <p>{{mc.cart.description}}</p>
+    </md-dialog-content>
+</md-dialog>

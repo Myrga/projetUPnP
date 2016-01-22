@@ -1,0 +1,40 @@
+<md-card class="player">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <span>{{mediaRendererBrick.name}}</span>
+            <input type="checkbox" class="focus" ng-model="playerCtrl.focus" ng-change="playerCtrl.testFocus()" hide-gt-xs/>
+        </div>
+    </md-toolbar>
+    <md-content class="playerContent">
+        <md-card-title>
+            <md-card-title-text><span class="md-headline">{{playerCtrl.titre}}</span></md-card-title-text>
+        </md-card-title>
+        <div class="inputs" layout-xs="column" layout-gt-xs="row" layout-align-gt-xs="center center" >
+            <div layout="row" layout-align-xs="center center">
+                <md-button class="md-fab" aria-label="{{playerCtrl.labelPlayPause}}" ng-click="playerCtrl.playPause()">
+                    <md-tooltip>{{playerCtrl.tooltipPlayPause}}</md-tooltip>
+                    <md-icon md-svg-src="{{playerCtrl.imagePlayPause}}"></md-icon>
+                </md-button>
+                <md-button class="md-fab" aria-label="Stop" ng-click="playerCtrl.stop()">
+                    <md-tooltip>Stop</md-tooltip>
+                    <md-icon md-svg-src="images/stop.svg"></md-icon>
+                </md-button>
+                <md-button class="md-fab" aria-label="Load" ng-click="playerCtrl.open()">
+                    <md-tooltip>Load</md-tooltip>
+                    <md-icon md-svg-src="images/load.svg"></md-icon>
+                </md-button>
+            </div>
+            <div layout="column" layout-align-xs="start stretch" flex>
+                <div layout="row">
+                    <md-icon md-svg-src="images/volume-low.svg" aria-label="Low volume"></md-icon>
+                    <md-slider flex ng-model="playerCtrl.volume" ng-change="playerCtrl.setVolume($event)" aria-label="Volume" min="0" max="100">
+                    </md-slider>
+                    <md-icon md-svg-src="images/volume-high.svg" aria-label="High volume"></md-icon>
+                </div>
+                <div layout="row" layout-align="center center">
+                    <span>{{playerCtrl.volume}}%</span>
+                </div>
+            </div>
+        </div>
+    </md-content>
+</md-card>
